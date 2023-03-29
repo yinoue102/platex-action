@@ -5,5 +5,7 @@ RUN apt-get update \
     git 
 #    latexdiff
 
-COPY ./.latexmkrc ./
-RUN latexmk -pv main.tex
+COPY ./.latexmkrc /.latexmkrc
+RUN ["chmod", "+x", "/entrypoint.sh"]
+ENTRYPOINT [ "/entrypoint.sh" ]
+# RUN latexmk -pv main.tex
