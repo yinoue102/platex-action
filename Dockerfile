@@ -6,4 +6,4 @@ RUN apt-get update \
 #    latexdiff
 
 COPY ./.latexmkrc ./
-RUN latexmk -pv ${INPUT_LATEX_FILE_NAME}
+RUN latexmk -pv main.tex
