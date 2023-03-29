@@ -5,6 +5,7 @@ RUN apt-get update \
     git 
 #    latexdiff
 
+COPY entrypoint.sh /entrypoint.sh
 COPY ./.latexmkrc /.latexmkrc
 RUN ["chmod", "+x", "/entrypoint.sh"]
 ENTRYPOINT [ "/entrypoint.sh" ]
