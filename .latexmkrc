@@ -1,25 +1,6 @@
-#!/usr/bin/env perl
-# example .latexmkrc 
-
-# platex pdf-sync
-$latex = 'platex -synctex=1 -halt-on-error';
-
-# platex less-error-message
-$latex_silent = 'platex -synctex=1 -halt-on-error -interaction=batchmode';
-
-# pbibtex
-$bibtex = 'pbibtex';
-
-# div -> pdf output main.pdf 
-$dvipdf = 'dvipdfmx %O -o main.pdf %S';
-
-# index
-$makeindex = 'mendex %O -o %D %S';
-
-$max_repeat = 4;
-
-# dvi -> pdf
+$latex = 'uplatex %O -synctex=1 -interaction=nonstopmode -file-line-error %S';
+$bibtex = 'upbibtex %O %B';
+$biber = 'biber %O --bblencoding=utf8 -u -U --output_safechars %B';
+$dvipdf = 'dvipdfmx %O -o %D %S';
+$makeindex = 'upmendex %O -o %D %S';
 $pdf_mode = 3;
-
-# preview update
-$pdf_update_method = 4;
