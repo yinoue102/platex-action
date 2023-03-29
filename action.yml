@@ -5,7 +5,7 @@ inputs:
   LATEX_FILE_NAME:
     description: "Compile Tex File"
     required: true
-    default: "main.tex"
+    # default: "main.tex"
 runs:
   using: "docker"
   image: "Dockerfile"
